@@ -1,0 +1,85 @@
+/* Styles pour la barre de navigation */
+.navbar {
+    background-color: #007bff;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar-toggler {
+    display: none;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-item {
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+/* Styles pour le contenu principal */
+.container {
+    margin-top: 20px;
+}
+
+.jumbotron {
+    background-color: powderblue;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Styles pour la liste de catégories */
+.list-group-item {
+    background-color: #007bff;
+    color: #f8f9fa !important;
+    border: none;
+    border-radius: 0;
+}
+
+/* Styles pour les cartes de cours */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Styles pour la section de la galerie d'images */
+#imageCarousel {
+    margin-top: 20px;
+}
+
+.carousel-inner {
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+/* Styles pour la section de contact */
+.card-title {
+    color: #007bff;
+}
+
+#contactForm {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Styles pour le pied de page */
+footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

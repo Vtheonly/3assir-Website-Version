@@ -45,7 +45,7 @@ function Grid() {
       <User 
         key={user.id} // Assuming each user has a unique id property
         name={user.full_name} 
-        location={user.position.latitude} 
+        location={user.location} 
         car={user.car} 
         price={user.price} 
         score={user.score} 

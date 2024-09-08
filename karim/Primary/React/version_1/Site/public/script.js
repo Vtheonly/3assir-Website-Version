@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadContacts() {
         contacts = document.querySelectorAll(".cnt-btn");
-
+        // contacts[0].click()
         if (!contacts.length) {
             setTimeout(loadContacts, 100);
             return;
@@ -23,23 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contacts.forEach((contact) => {
             contact.addEventListener("click", () => {
-
-
-
-
                 longitude = parseFloat(contact.parentElement.parentElement.querySelector("#longittude").innerText);
                 latitude = parseFloat(contact.parentElement.parentElement.querySelector("#latitude").innerText);
-                
-                // for one contact
                 let phone = contact.parentElement.parentElement.querySelector("#phone");
                 let description = contact.parentElement.parentElement.querySelector("#description");
                 let fullname = contact.parentElement.parentElement.querySelector("#name");
-
-
                 if (!isNaN(latitude) && !isNaN(longitude)) {
                     map.setView([latitude, longitude], 13);
                     L.marker([latitude, longitude]).addTo(map);
-                    // document.querySelector(".map").classList.add("active");
                     map.invalidateSize();
                 } else {
                     console.error("Invalid latitude or longitude");
@@ -57,14 +48,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function setupListeners() {
+
         const whereBtn = document.querySelector("#root > div > div > div.result > div:nth-child(1) > div.details > div.detail.where");
         const mapContainer = document.querySelector("#root > div > div > div.result > div.map");
         const exit = document.querySelector("#map > span");
+        const search_button = document.querySelector("#root > div > div.searchBarSect > button");
+        const SearchLoaction = document.querySelector("#root > div > div.searchBarSect > input.Near");
+        const SearchPrice = document.querySelector("#root > div > div.searchBarSect > input.MaxPrice");
+
+        search_button.addEventListener("click", (event) => {
+            var maxPrice = document.querySelector("#root > div > div.searchBarSect > input.MaxPrice").value;
+            var nearLocation = document.querySelector("#root > div > div.searchBarSect > input.Near").value.toLowerCase();
+        
+            var userItems = document.getElementsByClassName('user_item');
+        
+            // Remove the ".hide" class from all user items
+            Array.from(userItems).forEach(userItem => {
+                userItem.classList.remove('hide');
+            });
+        
+            // Add the ".hide" class to the user items that meet the criteria
+            Array.from(userItems).forEach(userItem => {
+                var priceElement = userItem.getElementsByClassName('priceS')[0];
+                var priceText = priceElement.innerText;
+                var price = parseInt(priceText.split(' ')[0]);
+        
+                var locationElement = userItem.getElementsByClassName('location')[0];
+                var location = locationElement.innerText.toLowerCase();
+        
+                if ((maxPrice && price > maxPrice) || (nearLocation && location.indexOf(nearLocation) === -1)) {
+                    userItem.classList.add('hide');
+                }
+            });
+        });
+        
+
+
+
+
+
 
         if (!whereBtn || !mapContainer) {
             setTimeout(setupListeners, 100);
             return;
         }
+
+
 
         whereBtn.addEventListener("click", (event) => {
             event.preventDefault();
@@ -80,13 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 mapContainer.classList.toggle("active");
             }
         });
+
     }
 
     loadContacts();
 });
 
-function getContacts() {
-    contacts.forEach((el) => {
-        console.log(el.parentElement);
-    });
-}

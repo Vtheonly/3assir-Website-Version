@@ -4,10 +4,9 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-/* 
-body {
-    background: linear-gradient(to right, #1f1c2c, #928dab);
-} */
+
+
+
 
 .users_grid {
     outline: 1px black solid;
@@ -25,16 +24,29 @@ body {
     scale: 0.95;
     box-shadow: 1px 1px 10px 2px;
     border-radius: 15px;
-    scrollbar-width: thin;
-    scrollbar-color: #000000cb #ffffff00
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #000000cb #ffffff00; /* For Firefox */
 }
 
+/* For Webkit-based browsers (Chrome, Safari, etc.) */
+.users_grid::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.users_grid::-webkit-scrollbar-thumb {
+    background-color: #000000cb; 
+    border-radius: 10px;
+}
 
 .users_grid::-webkit-scrollbar-track {
-    background-color: #9b1d1d;
-    border-radius: 10px;
-
+    background-color: transparent;
 }
+
+.users_grid::-webkit-scrollbar-button {
+    display: none;
+}
+
+
 
 
 .pfp_circle {
@@ -175,7 +187,7 @@ background-color: white;
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 /* #di */

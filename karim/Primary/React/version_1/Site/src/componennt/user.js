@@ -3,11 +3,13 @@ import "../componennt/styles/user.css";
 
 
 export function User(props) {
+
+  // for is active or not
   const backgroundColor = () => {
     if (props.isActive === 'Free') {
       return 'green';
     } else if (props.isActive === 'Busy') {
-      return 'brown';
+      return 'yellow';
     } else if (props.isActive === 'Out of Service') {
       return 'red';
     } else {
@@ -19,47 +21,31 @@ export function User(props) {
 
 
 
-
   return (
-    <div class="user_item">
-      <div class="lefts">
-        <div class="pfp_circle">
-          <span class="isActive" style={{ backgroundColor: backgroundColor() }}></span>
+    <div className="user_item">
+      <div className="lefts">
+        <div className="pfp_circle">
+          <span className="isActive" style={{ backgroundColor: backgroundColor() }}></span>
         </div>
-        <div class="info">
-          <b class="name" id="name">{props.name}</b>
-          <p>{props.location}</p>
-
-          <p class="hide" id="phone" >{props.phone}</p>
-          <p class="hide" id="description" >{props.description}</p>
-
-
-
-          <p class="hide" id="longittude">{props.longitude}</p>
-          <p class="hide" id="latitude">{props.latitude}</p>
+        <div className="info">
+          {/* visisble */}
+          <b className="name" id="name">{props.name}</b>
+          <p className="location">{props.location}</p>
           <p>{props.car}</p>
+          {/* for result parsing */}
+          <p className="hide" id="longittude">{props.longitude}</p>
+          <p className="hide" id="latitude">{props.latitude}</p>
+          <p className="hide" id="phone" >{props.phone}</p>
+          <p className="hide" id="description" >{props.description}</p>
         </div>
       </div>
 
-      <div class="rights">
-        <b>{props.price || 0} DA / KM</b>
-
-
-        <div class="cnt-btn" >
+      <div className="rights">
+        <b className="priceS">{props.price || 0} DA / KM</b>
+        <div className="cnt-btn" >
           Contact
         </div>
-
-
-
-        {/* score */}
-        <div>
-          {/* <img src={Heart} alt="Description" /> */}
-          <br />
-          <span>{props.score || 12}</span>
-        </div>
       </div>
-
-
     </div>
   );
 }

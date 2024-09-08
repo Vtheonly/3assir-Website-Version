@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <SearchBar />
-      <div class="section-2">
+      <div className="section-2">
         <Grid />
         <Result />
       </div>

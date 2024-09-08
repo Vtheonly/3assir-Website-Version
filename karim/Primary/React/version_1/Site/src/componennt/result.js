@@ -7,7 +7,7 @@ export function Result() {
     var longitude = -74.005974;
     return (
 
-        <div class="result">
+        <div className="result">
 
             <Contact />
        

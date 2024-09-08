@@ -114,21 +114,23 @@
     justify-content: center;
     flex-direction: column;
     height: 50%;
+
 }
 
 .detail {
+    box-sizing: border-box;
     text-align: center;
     border-radius: 5px;
     width: 90%;
-    padding: 0.4em;
-    background-color: rgb(128, 128, 128);
-    color: white;
+    padding: 1em;
+    color: black;
     border: black 1px solid;
     margin: 0.5em auto;
 }
 
 .description {
     flex-grow: 1;
+    
 }
 
 
@@ -176,8 +178,25 @@
 /* #di */
 #resdescription {
     height: 7em;
-    /* background-color: #9b1d1d; */
+    position: relative;
 }
+#resphone{
+    position: relative;
+}
+
+#resdescription::after ,#resphone::after{
+    position: absolute;
+    content: "";
+    top: -0.8em;
+    background-color: white;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    left: -2px;
+    color: black;
+}
+#resphone::after{content: "Phone:";}#resdescription::after{content: "Description:";}
+
+
 
 .where {
     width: 30%;
@@ -185,6 +204,7 @@
     scale: 1;
     transition: all ease 0.3s;
     cursor: pointer;
+    padding: 0.2em !important;
 }
 
 .where:hover {

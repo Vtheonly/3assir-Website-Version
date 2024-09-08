@@ -5,22 +5,22 @@ export function Contact() {
 
     return (
 
-<div>
-            
+        <div>
 
-      
+
+
             <div class="profile">
                 <div class="pfp_circle"></div>
-                <h1 class="profile_name">John Doe</h1>
+                <h1 class="profile_name" id="resname">John Doe</h1>
             </div>
             <div class="details">
-                <div class="detail phone_number">Phone Number: (123) 456-7890</div>
-                <div class="detail description">Description: Example description goes here.</div>
-                <div class="detail where">where ?</div>
+                <div class="detail phone_number" id="resphone">Phone Number: (123) 456-7890</div>
+                <div class="detail " id="resdescription" >Description: Example description goes here.</div>
+                <div class="detail where" >Location</div>
             </div>
-        
 
-            </div>
+
+        </div>
     );
 }
 

@@ -23,8 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contacts.forEach((contact) => {
             contact.addEventListener("click", () => {
+
+
+
+
                 longitude = parseFloat(contact.parentElement.parentElement.querySelector("#longittude").innerText);
                 latitude = parseFloat(contact.parentElement.parentElement.querySelector("#latitude").innerText);
+                
+                // for one contact
+                let phone = contact.parentElement.parentElement.querySelector("#phone");
+                let description = contact.parentElement.parentElement.querySelector("#description");
+                let fullname = contact.parentElement.parentElement.querySelector("#name");
+
 
                 if (!isNaN(latitude) && !isNaN(longitude)) {
                     map.setView([latitude, longitude], 13);
@@ -34,6 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     console.error("Invalid latitude or longitude");
                 }
+
+
+                document.querySelector("#resname").innerText = fullname.innerText;
+                document.querySelector("#resphone").innerText = phone.innerText;
+                document.querySelector("#resdescription").innerText = description.innerText;
+
+
+
             })
         })
     }

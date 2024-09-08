@@ -41,9 +41,11 @@ function Grid({ onContactClick }) {
           car={user.car}
           price={user.price}
           score={user.score}
-          isActive={user.isAvailable}
-          latitude={user.latitude} // Use actual latitude from data
-          longitude={user.longitude} // Use actual longitude from data
+          isActive={user.status}
+          latitude={user.latitude} 
+          longitude={user.longitude}
+          description={user.description}
+          phone={user.phone}
           onContactClick={() => onContactClick(user.latitude, user.longitude)} // Pass the handler
         />
       ))}

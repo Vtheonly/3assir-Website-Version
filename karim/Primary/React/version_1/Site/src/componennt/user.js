@@ -4,35 +4,39 @@ import "../componennt/styles/user.css";
 
 export function User(props) {
   const backgroundColor = () => {
-    if (props.isActive === true) {
+    if (props.isActive === 'Free') {
       return 'green';
-    } else if (props.isActive === 'busy') {
+    } else if (props.isActive === 'Busy') {
       return 'brown';
-    } else if (props.isActive === 'horsServsocst') {
+    } else if (props.isActive === 'Out of Service') {
       return 'red';
     } else {
-      return 'transparent'; 
+      return 'transparent';
     }
   };
 
 
 
 
-  
+
 
   return (
     <div class="user_item">
       <div class="lefts">
         <div class="pfp_circle">
-
-     
-        <span class="isActive" style={{ backgroundColor: backgroundColor() }}></span>
+          <span class="isActive" style={{ backgroundColor: backgroundColor() }}></span>
         </div>
         <div class="info">
-          <b class="name">{props.name}</b>
+          <b class="name" id="name">{props.name}</b>
           <p>{props.location}</p>
-          <p class="hide" id="longittude">{props.longittude || 2.2}</p>
-          <p class="hide" id="latitude">{props.latitude ||35.7}</p>
+
+          <p class="hide" id="phone" >{props.phone}</p>
+          <p class="hide" id="description" >{props.description}</p>
+
+
+
+          <p class="hide" id="longittude">{props.longitude}</p>
+          <p class="hide" id="latitude">{props.latitude}</p>
           <p>{props.car}</p>
         </div>
       </div>
@@ -42,7 +46,7 @@ export function User(props) {
 
 
         <div class="cnt-btn" >
-          Contact 
+          Contact
         </div>
 
 

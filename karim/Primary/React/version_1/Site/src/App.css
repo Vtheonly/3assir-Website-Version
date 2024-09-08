@@ -35,6 +35,8 @@
 
 
 .pfp_circle {
+    background-image: url("../assetes/pfp.jpg");
+    background-size: cover;
     border: solid black 3px;
     aspect-ratio: 1;
     height: 80%;
@@ -42,15 +44,18 @@
     position: relative;
 }
 
-#latitude,#longitude{
+#latitude,
+#longitude {
     display: none;
 }
 
 .result {
+
     overflow: hidden;
     transition: ease 1s all;
     position: relative;
     flex-grow: 1;
+    max-width: 40vw;
     height: 90vh;
     border-radius: 15px;
     scale: 0.95;
@@ -72,6 +77,8 @@
     transform: translateY(-70%);
     scale: 1.3;
     rotate: 5deg;
+    border: white solid 3px;
+    outline: black 2px solid;
 }
 
 .result .pfp_circle {
@@ -94,12 +101,15 @@
     margin-top: 10vh;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+
+    /* align-items: center; */
     gap: 0;
+    
+    transition: all ease 0.3s;
 }
 
-.details{
+.details {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -117,31 +127,32 @@
     margin: 0.5em auto;
 }
 
-.description{
-   flex-grow: 1;
+.description {
+    flex-grow: 1;
 }
 
 
-.map{
+.map {
     position: absolute;
     top: 5%;
     left: 5%;
     width: 90%;
     height: 90%;
     background-color: green;
-    transition:ease-in 0.3s all;
+    transition: ease-in 0.3s all;
     opacity: 0;
     transform: translateX(200%);
-
+    border: black 3px solid;
 
 }
 
-.map .exit{
+.map .exit {
     width: 1.5em;
     top: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    line-height: 1.5em;
+    text-align: center;
+    border-radius: 5000px;
+    box-sizing:border-box;
     color: white;
     left: 90%;
     background-color: #9b1d1d;
@@ -149,16 +160,35 @@
     z-index: 10000;
     aspect-ratio: 1;
     cursor: pointer !important;
-    border-radius: 50%;
     font-weight: bold;
     font-size: 1.3em;
 }
 
-.map.active{
+.map.active {
     opacity: 01;
     transform: translateX(0%);
 }
 
-.hide{
+.hide {
     display: none;
+}
+
+/* #di */
+#resdescription {
+    height: 7em;
+    /* background-color: #9b1d1d; */
+}
+
+.where {
+    width: 30%;
+    border-radius: 5000px;
+    scale: 1;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+
+.where:hover {
+    scale: 1.1;
+    background-color: black;
+    color: white;
 }

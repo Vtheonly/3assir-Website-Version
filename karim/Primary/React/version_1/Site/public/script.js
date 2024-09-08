@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 longitude = parseFloat(contact.parentElement.parentElement.querySelector("#longittude").innerText);
                 latitude = parseFloat(contact.parentElement.parentElement.querySelector("#latitude").innerText);
-                
+
                 // for one contact
                 let phone = contact.parentElement.parentElement.querySelector("#phone");
                 let description = contact.parentElement.parentElement.querySelector("#description");
@@ -80,13 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 mapContainer.classList.toggle("active");
             }
         });
+
+
+        let element = document.querySelector("#root > div > div.section-2 > div.users_grid > div:nth-child(1) > div.rights > div.cnt-btn");
+        element.click();
     }
 
+    // first loading
+    
     loadContacts();
+
 });
 
-function getContacts() {
-    contacts.forEach((el) => {
-        console.log(el.parentElement);
-    });
-}

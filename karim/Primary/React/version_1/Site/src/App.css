@@ -4,7 +4,10 @@
     font-family: sans-serif;
     box-sizing: border-box;
 }
-
+/* 
+body {
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+} */
 
 .users_grid {
     outline: 1px black solid;
@@ -50,7 +53,7 @@
 }
 
 .result {
-
+background-color: white;
     overflow: hidden;
     transition: ease 1s all;
     position: relative;
@@ -105,7 +108,7 @@
 
     /* align-items: center; */
     gap: 0;
-    
+
     transition: all ease 0.3s;
 }
 
@@ -130,7 +133,7 @@
 
 .description {
     flex-grow: 1;
-    
+
 }
 
 
@@ -154,7 +157,7 @@
     line-height: 1.5em;
     text-align: center;
     border-radius: 5000px;
-    box-sizing:border-box;
+    box-sizing: border-box;
     color: white;
     left: 90%;
     background-color: #9b1d1d;
@@ -178,28 +181,39 @@
 /* #di */
 #resdescription {
     height: 7em;
-    position: relative;
-}
-#resphone{
+    box-sizing: border-box;
+    /* overflow: auto; */
     position: relative;
 }
 
-#resdescription::after ,#resphone::after{
+#resphone {
+    position: relative;
+}
+
+#resdescription::after,
+#resphone::after {
     position: absolute;
     content: "";
     top: -0.8em;
     background-color: white;
-    padding: 3px 10px;
+    padding: 0 10px;
     box-sizing: border-box;
     left: -2px;
     color: black;
 }
-#resphone::after{content: "Phone:";}#resdescription::after{content: "Description:";}
+
+#resphone::after {
+    content: "Phone:";
+}
+
+#resdescription::after {
+    content: "Description:";
+}
 
 
 
 .where {
-    width: 30%;
+    width: 20%;
     border-radius: 5000px;
     scale: 1;
     transition: all ease 0.3s;
@@ -211,4 +225,121 @@
     scale: 1.1;
     background-color: black;
     color: white;
+}
+
+
+
+.searchBarSect {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    height: 10vh;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darker background */
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1000;
+    padding: 0 20px; /* Add padding to ensure inputs and button don't touch the edges */
+}
+
+.searchBarSect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .2);
+    filter: blur(10px);
+    background: inherit;
+    z-index: -1;
+}
+
+.searchBarSect::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.searchBarSect input {
+    flex: 1;
+    height: 40px;
+    margin: 0 10px;
+    padding: 0 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.searchBarSect input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.searchBarSect input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.searchBarSect .MaxPrice {
+    -moz-appearance: textfield; 
+}
+
+.searchBarSect .MaxPrice::-webkit-inner-spin-button,
+.searchBarSect .MaxPrice::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.searchBarSect .MaxPrice::-webkit-inner-spin-button {
+    display: none;
+
+}
+
+.searchBarSect .MaxPrice::-webkit-inner-spin-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.searchBarSect .SearchButton {
+    height: 40px;
+    padding: 0 20px;
+    margin-left: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchBarSect .SearchButton:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.searchBarSect .SearchButton:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }

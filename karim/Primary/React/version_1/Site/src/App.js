@@ -4,15 +4,18 @@ import './App.css';
 
 import Grid from './componennt/grid';
 import Result from './componennt/result';
+import SearchBar from './componennt/SearchBar.js';
 
 function App() {
   return (
-    <div class="section-2">
-
-      <Grid/> 
-      <Result/>
+    <div>
+      <SearchBar />
+      <div class="section-2">
+        <Grid />
+        <Result />
+      </div>
     </div>
-    );
+  );
 }
 
 export default App;
